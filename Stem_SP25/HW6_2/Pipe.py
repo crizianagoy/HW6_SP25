@@ -32,7 +32,7 @@ class Pipe():
         self.A=math.pi/4.0*self.d**2 #calculate pipe cross sectional area for easy use later
         self.Q=10 #working in units of L/s, just an initial guess
         self.vel=self.V()  #calculate the initial velocity of the fluid
-        self.reynolds=self.Re() #calculate the initial reynolds number
+        self.reynolds=self.Re() #calculating the initial reynolds number
         #endregion
     #endregion
 

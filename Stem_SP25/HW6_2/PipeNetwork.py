@@ -95,7 +95,7 @@ class PipeNetwork():
                 return n
 
     def buildNodes(self):
-        #automatically create the node objects by looking at the pipe ends
+        #creates the node objects by looking at the pipe ends
         for p in self.pipes:
             if self.nodeBuilt(p.startNode)==False:
                 #instantiate a node object and append it to the list of nodes
