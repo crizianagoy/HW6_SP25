@@ -24,7 +24,8 @@ class rankine():
         self.state4=None
 
     def calc_efficiency(self):
-        #calculate the 4 states
+        #Calculates the turbine inlet (p_high, t_high) superheated or saturated vapor
+        #calculates the 4 states
         #state 1: turbine inlet (p_high, t_high) superheated or saturated vapor
         if(self.t_high==None):
             self.state1 = steam(self.p_high, x=1, name='Turbine Inlet')  # Saturated steam
@@ -44,6 +45,23 @@ class rankine():
         return self.efficiency
 
     def print_summary(self):
+        """
+        Print a summary of the thermodynamic cycle.
+
+        This method displays key performance metrics of the cycle, including:
+        - Efficiency (%)
+        - Work done by the turbine (kJ/kg)
+        - Work required by the pump (kJ/kg)
+        - Heat added to the cycle (kJ/kg)
+
+        Additionally, it prints the state properties of all four cycle states.
+
+        If efficiency has not been previously calculated, it calls `calc_efficiency()`
+        to compute it before printing.
+
+        Returns:
+            None
+        """
         """ Print cycle summary """
         if self.efficiency==None:
             self.calc_efficiency()
